@@ -61,22 +61,27 @@ export default function ROICalculator() {
   return (
     <section id="calculator" className="bg-white px-6 sm:px-10 lg:px-20 py-24 border-t border-ink/8">
       <div className="max-w-5xl mx-auto">
-        <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">// 05_time_savings</span>
-        <h2 className="font-display text-[36px] sm:text-[44px] font-semibold tracking-[-0.025em] leading-[1.15] text-ink mt-4">
-          See how much time you&apos;re <em className="not-italic text-brand-orange">leaving on the table.</em>
-        </h2>
-        <p className="font-mono text-[13px] text-muted mt-3 max-w-md leading-relaxed">
-          Adjust the sliders to your team. The numbers are conservative — real results are usually higher.
-        </p>
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-red/8 border border-brand-red/15 mb-5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D40000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">// 06_time_savings</span>
+          </div>
+          <h2 className="font-display text-[36px] sm:text-[44px] font-semibold tracking-[-0.025em] leading-[1.15] text-ink">
+            See how much time you&apos;re <em className="not-italic text-brand-orange">leaving on the table.</em>
+          </h2>
+          <p className="font-mono text-[13px] text-muted mt-3 max-w-md mx-auto leading-relaxed">
+            Adjust the sliders to your team. The numbers are conservative — real results are usually higher.
+          </p>
+        </div>
 
-        <div className="grid lg:grid-cols-2 gap-6 mt-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-6 items-start">
           {/* Inputs */}
           <div className="bg-cream rounded-2xl p-6 sm:p-8 border border-ink/8 space-y-8">
             {sliders.map(({ id, label, value, min, max, step, display, set }) => (
               <div key={id}>
                 <div className="flex justify-between items-center mb-3">
                   <label htmlFor={id} className="font-mono text-[11px] uppercase tracking-widest text-muted">{label}</label>
-                  <span className="font-display text-[20px] font-semibold text-gold">{display}</span>
+                  <span className="font-display text-[16px] font-semibold text-gold">{display}</span>
                 </div>
                 <input id={id} type="range" min={min} max={max} step={step} value={value}
                   onChange={e => set(Number(e.target.value))}
@@ -108,8 +113,8 @@ export default function ROICalculator() {
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
               </div>
               <div>
-                <div className="font-display text-[52px] font-semibold leading-none">{fmtHours(weeklyTeam)}</div>
-                <div className="font-mono text-[11px] uppercase tracking-widest opacity-70 mt-1">Team hours saved / week</div>
+                <div className="font-display text-[40px] font-semibold leading-none">{fmtHours(weeklyTeam)}</div>
+                <div className="font-mono text-[10px] uppercase tracking-widest opacity-70 mt-1">Team hours saved / week</div>
               </div>
             </div>
 
@@ -118,28 +123,30 @@ export default function ROICalculator() {
               <p className="font-mono text-[11px] uppercase tracking-widest text-muted mb-4">Time recovered</p>
               <dl className="space-y-0">
                 {[
-                  { label: "Per month",       value: `${monthly}h`,        big: false },
-                  { label: "Per year",        value: `${annual}h`,         big: false },
-                  { label: "Work days freed", value: `${daysFreed} days`,  big: false },
+                  { label: "Per month",       value: `${monthly}h`,         big: false },
+                  { label: "Per year",        value: `${annual}h`,          big: false },
+                  { label: "Work days freed", value: `${daysFreed} days`,   big: false },
                   { label: "FTE recovered",   value: `${fteRecovered} FTE`, big: true  },
                 ].map(({ label, value, big }) => (
                   <div key={label} className={`flex justify-between items-center py-3.5 ${big ? "border-t border-ink/10" : "border-b border-ink/8"}`}>
                     <dt className={`font-mono text-[13px] ${big ? "font-semibold text-ink" : "text-muted"}`}>{label}</dt>
-                    <dd className={`font-display ${big ? "text-[34px] font-semibold text-gold" : "text-[19px] font-medium text-ink"}`}>{value}</dd>
+                    <dd className={`font-display ${big ? "text-[26px] font-semibold text-gold" : "text-[15px] font-medium text-ink"}`}>{value}</dd>
                   </div>
                 ))}
               </dl>
             </div>
-
-            <a href="#contact"
-              className="w-full text-center py-4 rounded-xl bg-ink text-cream font-mono text-[13px] font-semibold transition-all hover:-translate-y-0.5 hover:bg-brand-red hover:shadow-[0_6px_20px_rgba(212,0,0,0.25)]">
-              Start getting that time back →
-            </a>
-
-            <p className="font-mono text-[11px] text-muted/70 text-center leading-relaxed px-2">
-              Illustrative estimates. FTE calculated at 2,080 hrs/year. Actual results vary by task complexity.
-            </p>
           </div>
+        </div>
+
+        {/* CTA — full width below both columns */}
+        <div className="mt-5">
+          <a href="#contact"
+            className="w-full block text-center py-4 rounded-xl bg-ink text-cream font-mono text-[13px] font-semibold transition-all hover:-translate-y-0.5 hover:bg-brand-red hover:shadow-[0_6px_20px_rgba(212,0,0,0.25)]">
+            Start getting that time back →
+          </a>
+          <p className="font-mono text-[11px] text-muted/70 text-center leading-relaxed mt-3">
+            Illustrative estimates. FTE calculated at 2,080 hrs/year. Actual results vary by task complexity.
+          </p>
         </div>
       </div>
     </section>

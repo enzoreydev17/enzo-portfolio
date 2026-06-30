@@ -16,12 +16,20 @@ export default function FAQ() {
   return (
     <section id="faq" className="px-6 sm:px-10 lg:px-20 py-24 border-t border-ink/8">
       <div className="max-w-3xl mx-auto">
-        <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">// 06_faq</span>
-        <h2 className="font-display text-[36px] sm:text-[44px] font-semibold tracking-[-0.025em] leading-[1.15] text-ink mt-4">
-          Got questions? I&apos;ve got <em className="not-italic text-brand-red">answers</em>.
-        </h2>
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-red/8 border border-brand-red/15 mb-5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D40000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">// 07_faq</span>
+          </div>
+          <h2 className="font-display text-[36px] sm:text-[44px] font-semibold tracking-[-0.025em] leading-[1.15] text-ink">
+            Got questions? I&apos;ve got <em className="not-italic text-brand-red">answers</em>.
+          </h2>
+          <p className="font-mono text-[13px] text-muted mt-3 max-w-md mx-auto leading-relaxed">
+            Everything you need to know before we start working together.
+          </p>
+        </div>
 
-        <div className="mt-10 flex flex-col gap-3">
+        <div className="flex flex-col gap-3">
           {faqs.map(({ q, a }, i) => (
             <div key={i}
               className={`rounded-2xl border bg-white overflow-hidden transition-all duration-200 ${open === i ? "border-brand-orange/40 shadow-[0_4px_20px_rgba(58,31,14,0.08)]" : "border-ink/8 hover:border-ink/20"}`}>

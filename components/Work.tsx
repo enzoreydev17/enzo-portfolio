@@ -37,15 +37,20 @@ export default function Work() {
   return (
     <section id="work" className="bg-white px-6 sm:px-10 lg:px-20 py-24 border-t border-ink/8">
       <div className="max-w-5xl mx-auto">
-        <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">// 03_case_studies</span>
-        <h2 className="font-display text-[36px] sm:text-[44px] font-semibold tracking-[-0.025em] leading-[1.15] text-ink mt-4">
-          Real projects. Real results.
-        </h2>
-        <p className="font-mono text-[14px] text-muted mt-3 max-w-lg leading-relaxed">
-          Every number below represents time someone got back, or a decision someone could finally make.
-        </p>
+        <div className="text-center mb-14">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-red/8 border border-brand-red/15 mb-5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D40000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">// 03_case_studies</span>
+          </div>
+          <h2 className="font-display text-[36px] sm:text-[44px] font-semibold tracking-[-0.025em] leading-[1.15] text-ink">
+            Real projects. Real results.
+          </h2>
+          <p className="font-mono text-[13px] text-muted mt-3 max-w-md mx-auto leading-relaxed">
+            Every number below represents time someone got back, or a decision someone could finally make.
+          </p>
+        </div>
 
-        <div className="grid sm:grid-cols-2 gap-5 mt-12">
+        <div className="grid sm:grid-cols-2 gap-5">
           {cases.map(({ tag, result, title, problem, built, color }) => (
             <div key={title}
               className={`group bg-cream rounded-2xl p-7 border border-t-[3px] ${color} border-x-ink/8 border-b-ink/8 transition-all duration-250 hover:-translate-y-1 hover:shadow-[0_10px_36px_rgba(58,31,14,0.1)]`}>

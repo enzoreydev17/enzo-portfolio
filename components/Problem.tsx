@@ -26,13 +26,20 @@ export default function Problem() {
   return (
     <section className="bg-white px-6 sm:px-10 lg:px-20 py-24 border-t border-ink/8">
       <div className="max-w-5xl mx-auto">
-        <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">// the reality</span>
+        <div className="text-center mb-14">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-red/8 border border-brand-red/15 mb-5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D40000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">// 02_the_reality</span>
+          </div>
+          <h2 className="font-display text-[36px] sm:text-[44px] font-semibold tracking-[-0.025em] leading-[1.15] text-ink">
+            Every business I&apos;ve worked with has the same invisible problem.
+          </h2>
+          <p className="font-mono text-[13px] text-muted mt-3 max-w-md mx-auto leading-relaxed">
+            Manual work is hiding in plain sight — and it&apos;s more expensive than anyone admits.
+          </p>
+        </div>
 
-        <h2 className="font-display text-[36px] sm:text-[44px] font-semibold tracking-[-0.025em] leading-[1.15] text-ink mt-4 max-w-2xl">
-          Every business I&apos;ve worked with has the same invisible problem.
-        </h2>
-
-        <div className="grid sm:grid-cols-3 gap-5 mt-12">
+        <div className="grid sm:grid-cols-3 gap-5">
           {pains.map(({ icon, title, body }) => (
             <div key={title}
               className="group bg-cream rounded-2xl p-6 border border-ink/8 transition-all duration-250 hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(58,31,14,0.1)] hover:border-brand-orange/30">
