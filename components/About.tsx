@@ -51,6 +51,23 @@ const CERTS = [
   },
 ];
 
+function UPLBIcon() {
+  return (
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+      {/* Outer maroon ring */}
+      <circle cx="18" cy="18" r="18" fill="#7B1C3A"/>
+      {/* Inner cream field */}
+      <circle cx="18" cy="18" r="13" fill="#F5E2C8"/>
+      {/* Three stars (PH flag motif) */}
+      <text x="18" y="10" textAnchor="middle" fontSize="5" fill="#7B1C3A" fontFamily="Arial,sans-serif">★ ★ ★</text>
+      {/* UP wordmark */}
+      <text x="18" y="21.5" textAnchor="middle" fontSize="10" fontWeight="900" fill="#7B1C3A" fontFamily="Georgia,serif" letterSpacing="-0.5">UP</text>
+      {/* Ring label */}
+      <text x="18" y="34" textAnchor="middle" fontSize="3.2" fill="white" fontFamily="Arial,sans-serif" letterSpacing="0.6">LOS BAÑOS</text>
+    </svg>
+  );
+}
+
 function LSSIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -191,9 +208,15 @@ export default function About() {
             </div>
 
             {/* Tagline */}
-            <p className="font-display text-[14px] italic text-muted text-center max-w-[260px] leading-relaxed">
-              &ldquo;The discipline that gets you through 113km at 4am is what I bring to every build.&rdquo;
-            </p>
+            <div className="text-center max-w-[260px]">
+              <p className="font-display text-[17px] font-semibold text-ink leading-snug">
+                I don&apos;t DNF races.
+              </p>
+              <p className="font-display text-[17px] font-semibold text-brand-red leading-snug">
+                I don&apos;t DNF projects.
+              </p>
+              <p className="font-mono text-[10px] text-muted mt-1.5 tracking-wide">DNF = Did Not Finish</p>
+            </div>
           </div>
 
           {/* ── RIGHT: Bio + Certs + Education ── */}
@@ -238,10 +261,15 @@ export default function About() {
             </div>
 
             {/* Education */}
-            <div className="p-5 rounded-2xl bg-ink text-cream">
-              <p className="font-mono text-[11px] uppercase tracking-widest text-cream/45 mb-2">Education</p>
-              <p className="font-display text-[16px] font-medium">University of the Philippines Los Baños</p>
-              <p className="font-mono text-[12px] text-cream/55 mt-1">B.S. Statistics</p>
+            <div className="flex items-center gap-4 p-5 rounded-2xl bg-ink text-cream">
+              <div className="flex-shrink-0">
+                <UPLBIcon />
+              </div>
+              <div>
+                <p className="font-mono text-[11px] uppercase tracking-widest text-cream/45 mb-1">Education</p>
+                <p className="font-display text-[16px] font-medium leading-snug">University of the Philippines Los Baños</p>
+                <p className="font-mono text-[12px] text-cream/55 mt-1">B.S. Statistics</p>
+              </div>
             </div>
           </div>
 
