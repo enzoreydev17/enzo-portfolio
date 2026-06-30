@@ -22,62 +22,36 @@ const CERTS = [
   {
     name: "AWS Solutions Architect Associate",
     year: "2022",
-    iconUrl: "https://cdn.simpleicons.org/amazonaws/FF9900",
-    iconBg: "#131921",
+    imgSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/3840px-Amazon_Web_Services_Logo.svg.png",
+    iconBg: "#fff",
   },
   {
     name: "Databricks Certified Data Engineer",
     year: "2023",
-    iconUrl: "https://cdn.simpleicons.org/databricks/FF3621",
-    iconBg: "#1B1B1B",
+    imgSrc: "https://upload.wikimedia.org/wikipedia/commons/6/63/Databricks_Logo.png",
+    iconBg: "#fff",
   },
   {
     name: "SnowPro Core Certified",
     year: "2024",
-    iconUrl: "https://cdn.simpleicons.org/snowflake/29B5E8",
-    iconBg: "#F5FBFF",
+    imgSrc: "https://img.logo.dev/snowflake.com?token=live_6a1a28fd-6420-4492-aeb0-b297461d9de2&size=512&retina=true&format=png",
+    iconBg: "#fff",
   },
   {
     name: "HubSpot RevOps Certified",
     year: "—",
-    iconUrl: "https://cdn.simpleicons.org/hubspot/FF7A59",
-    iconBg: "#FFF4F0",
+    imgSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/HubSpot_Logo.svg/3840px-HubSpot_Logo.svg.png",
+    iconBg: "#fff",
   },
   {
     name: "Lean Six Sigma Black Belt",
     year: "2020",
-    iconUrl: null,
-    iconBg: "#111",
+    imgSrc: "https://images.credly.com/images/99c6c563-b252-4a36-8521-00f4509f2e5c/image.png",
+    iconBg: "#fff",
   },
 ];
 
-function UPLBIcon() {
-  return (
-    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-      {/* Outer maroon ring */}
-      <circle cx="18" cy="18" r="18" fill="#7B1C3A"/>
-      {/* Inner cream field */}
-      <circle cx="18" cy="18" r="13" fill="#F5E2C8"/>
-      {/* Three stars (PH flag motif) */}
-      <text x="18" y="10" textAnchor="middle" fontSize="5" fill="#7B1C3A" fontFamily="Arial,sans-serif">★ ★ ★</text>
-      {/* UP wordmark */}
-      <text x="18" y="21.5" textAnchor="middle" fontSize="10" fontWeight="900" fill="#7B1C3A" fontFamily="Georgia,serif" letterSpacing="-0.5">UP</text>
-      {/* Ring label */}
-      <text x="18" y="34" textAnchor="middle" fontSize="3.2" fill="white" fontFamily="Arial,sans-serif" letterSpacing="0.6">LOS BAÑOS</text>
-    </svg>
-  );
-}
 
-function LSSIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-      <rect x="2" y="10" width="20" height="8" rx="4" fill="#2A2A2A" stroke="#555" strokeWidth="1"/>
-      <rect x="9" y="8" width="6" height="12" rx="1.5" fill="#333" stroke="#666" strokeWidth="0.8"/>
-      <circle cx="12" cy="14" r="2" fill="#888"/>
-      <text x="12" y="7.5" fontSize="4" fontWeight="900" fill="#999" textAnchor="middle" fontFamily="Arial,sans-serif" letterSpacing="0.3">LSS</text>
-    </svg>
-  );
-}
 
 export default function About() {
   const [active, setActive] = useState(0);
@@ -208,14 +182,16 @@ export default function About() {
             </div>
 
             {/* Tagline */}
-            <div className="text-center max-w-[260px]">
-              <p className="font-display text-[17px] font-semibold text-ink leading-snug">
-                I don&apos;t DNF races.
+            <div className="text-center max-w-[270px]">
+              <p className="font-display text-[16px] text-ink/75 leading-relaxed">
+                Most people stop at <em className="not-italic font-semibold text-ink">hard.</em>
               </p>
-              <p className="font-display text-[17px] font-semibold text-brand-red leading-snug">
-                I don&apos;t DNF projects.
+              <p className="font-display text-[16px] leading-relaxed">
+                Triathletes — and good Automation engineers —
               </p>
-              <p className="font-mono text-[10px] text-muted mt-1.5 tracking-wide">DNF = Did Not Finish</p>
+              <p className="font-display text-[16px] font-semibold text-brand-red leading-relaxed">
+                stop at done.
+              </p>
             </div>
           </div>
 
@@ -223,9 +199,10 @@ export default function About() {
           <div>
             <div className="space-y-5 mb-10">
               <p className="font-display text-[17px] text-ink/85 leading-[1.8]">
-                My career started in data — modeling credit risk at UnionBank, tracking
-                commodity markets at S&P Global Platts. I wasn&apos;t pitching decks.
-                I was building the actual systems that decisions ran on.
+                My career started in data — a Statistics degree from University of the Philippines Los Baños,
+                then modeling credit risk at UnionBank and tracking commodity markets
+                at S&P Global Platts. I wasn&apos;t pitching decks. I was building
+                the actual systems that decisions ran on.
               </p>
               <p className="font-display text-[17px] text-ink/85 leading-[1.8]">
                 That shifted when I moved into automation. At Meta, I led the team
@@ -243,33 +220,18 @@ export default function About() {
 
             {/* Certifications */}
             <p className="font-mono text-[11px] uppercase tracking-widest text-muted mb-3">Certifications</p>
-            <div className="flex flex-col gap-2 mb-6">
-              {CERTS.map(({ name, year, iconUrl, iconBg }) => (
+            <div className="flex flex-col gap-2">
+              {CERTS.map(({ name, year, imgSrc, iconBg }) => (
                 <div key={name}
                   className="flex items-center gap-3 px-3.5 py-2.5 bg-white rounded-xl border border-ink/8 transition-all hover:border-brand-orange/30 hover:bg-cream">
-                  {/* Logo badge */}
-                  <div className="w-9 h-9 rounded-lg flex-shrink-0 flex items-center justify-center overflow-hidden"
+                  <div className="w-12 h-9 rounded-lg flex-shrink-0 flex items-center justify-center overflow-hidden p-1.5"
                     style={{ background: iconBg }}>
-                    {iconUrl
-                      ? <img src={iconUrl} alt="" width={20} height={20} style={{ objectFit: "contain" }} />
-                      : <LSSIcon />}
+                    <img src={imgSrc!} alt={name} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
                   </div>
                   <span className="font-mono text-[12px] text-ink flex-1 min-w-0">{name}</span>
                   <span className="font-mono text-[11px] font-semibold text-ink/50 flex-shrink-0 ml-2">{year}</span>
                 </div>
               ))}
-            </div>
-
-            {/* Education */}
-            <div className="flex items-center gap-4 p-5 rounded-2xl bg-ink text-cream">
-              <div className="flex-shrink-0">
-                <UPLBIcon />
-              </div>
-              <div>
-                <p className="font-mono text-[11px] uppercase tracking-widest text-cream/45 mb-1">Education</p>
-                <p className="font-display text-[16px] font-medium leading-snug">University of the Philippines Los Baños</p>
-                <p className="font-mono text-[12px] text-cream/55 mt-1">B.S. Statistics</p>
-              </div>
             </div>
           </div>
 
