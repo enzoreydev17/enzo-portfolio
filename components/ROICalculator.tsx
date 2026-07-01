@@ -67,7 +67,7 @@ export default function ROICalculator() {
             <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">What is manual work really costing you?</span>
           </div>
           <h2 className="font-display text-[36px] sm:text-[44px] font-semibold tracking-[-0.025em] leading-[1.15] text-ink">
-            See how much time you&apos;re <em className="not-italic text-brand-orange">leaving on the table.</em>
+            Time <em className="not-italic text-brand-red">saved</em> = money <em className="not-italic text-brand-red">earned.</em> See the numbers.
           </h2>
           <p className="font-mono text-[13px] text-muted mt-3 max-w-md mx-auto leading-relaxed">
             Adjust the sliders to your team. The numbers are conservative — real results are usually higher.

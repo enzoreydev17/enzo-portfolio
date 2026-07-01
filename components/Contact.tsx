@@ -4,6 +4,8 @@ import { useState } from "react";
 const WEBHOOK_URL = "https://REPLACE-WITH-YOUR-N8N-WEBHOOK-URL";
 
 const EMAIL = "lzreybuenan@gmail.com";
+const PHONE = "+639501767979";
+const PHONE_DISPLAY = "+63 950 176 7979";
 const LINKEDIN_URL = "https://linkedin.com/in/lorenzo-zuriel-reybuenan";
 
 export default function Contact() {
@@ -11,11 +13,19 @@ export default function Contact() {
   const [status, setStatus] = useState<{ text: string; ok: boolean } | null>(null);
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
 
   function copyEmail() {
     navigator.clipboard.writeText(EMAIL).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+    });
+  }
+
+  function copyPhone() {
+    navigator.clipboard.writeText(PHONE).then(() => {
+      setCopiedPhone(true);
+      setTimeout(() => setCopiedPhone(false), 2000);
     });
   }
 
@@ -76,6 +86,25 @@ export default function Contact() {
               </div>
               <div className={`w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 transition-all ${copied ? "bg-brand-orange text-cream" : "bg-ink/5 text-muted group-hover:bg-brand-red group-hover:text-cream"}`}>
                 {copied
+                  ? <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                  : <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>}
+              </div>
+            </button>
+
+            {/* WhatsApp / Viber — click to copy */}
+            <button type="button" onClick={copyPhone}
+              className="group flex items-center justify-between gap-4 p-4 rounded-2xl bg-cream border border-ink/8 transition-all hover:border-brand-red/30 hover:shadow-[0_4px_16px_rgba(58,31,14,0.08)] text-left w-full">
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="w-10 h-10 rounded-xl flex-shrink-0 flex items-center justify-center" style={{ background: "#DCFCE7", color: "#16A34A" }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div className="min-w-0">
+                  <span className="font-mono text-[13px] font-semibold text-ink block">{PHONE_DISPLAY}</span>
+                  <span className="font-mono text-[10px] text-muted">WhatsApp · Viber · {copiedPhone ? "✓ Copied!" : "Click to copy"}</span>
+                </div>
+              </div>
+              <div className={`w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 transition-all ${copiedPhone ? "bg-brand-orange text-cream" : "bg-ink/5 text-muted group-hover:bg-brand-red group-hover:text-cream"}`}>
+                {copiedPhone
                   ? <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
                   : <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>}
               </div>

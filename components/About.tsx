@@ -69,10 +69,10 @@ export default function About() {
             <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">Person Behind the Work</span>
           </div>
           <h2 className="font-display text-[36px] sm:text-[44px] font-semibold tracking-[-0.025em] leading-[1.15] text-ink">
-            I didn&apos;t start as a consultant. I started as the builder.
+            I didn&apos;t start as a <em className="not-italic text-brand-red">consultant.</em> I started as the <em className="not-italic text-brand-red">builder.</em>
           </h2>
           <p className="font-mono text-[13px] text-muted mt-3 max-w-md mx-auto leading-relaxed">
-            Data scientist, automation engineer, triathlete. Here&apos;s the full picture.
+            Data scientist, automation engineer, triathlete.
           </p>
         </div>
 

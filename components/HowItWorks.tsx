@@ -58,10 +58,10 @@ export default function HowItWorks() {
             <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">How It Works</span>
           </div>
           <h2 className="font-display text-[36px] sm:text-[44px] font-semibold tracking-[-0.025em] leading-[1.15] text-ink">
-            Five clear steps from chaos to clarity.
+            How we turn scattered workflows into automated systems.
           </h2>
-          <p className="font-mono text-[13px] text-muted mt-3 max-w-md mx-auto leading-relaxed">
-            No black box. No surprises. Every engagement follows the same battle-tested process.
+          <p className="font-mono text-[13px] text-muted mt-3 max-w-lg mx-auto leading-relaxed">
+            No black box. Just a proven process with clear deliverables, clear timelines, and automation your team can actually use.
           </p>
         </div>
 

@@ -53,10 +53,10 @@ const SCENES: Scene[] = [
       { label: "Docs",     type: "data",    leftPct: 13.846, topPct: 32.593, icon: "docs"     },
       { label: "Split",    type: "logic",   leftPct: 38.462, topPct: 32.593, icon: "split"    },
       { label: "Embed",    type: "ai",      leftPct: 63.077, topPct: 32.593, icon: "embed"    },
-      { label: "Supabase", type: "data",    leftPct: 87.692, topPct: 32.593, icon: "supabase" },
+      { label: "Storage", type: "data",    leftPct: 87.692, topPct: 32.593, icon: "supabase" },
       { label: "Question", type: "trigger", leftPct: 13.846, topPct: 74.815, icon: "question" },
       { label: "Retrieve", type: "logic",   leftPct: 38.462, topPct: 74.815, icon: "retrieve" },
-      { label: "Gemini",   type: "ai",      leftPct: 63.077, topPct: 74.815, icon: "gemini"   },
+      { label: "LLM",   type: "ai",      leftPct: 63.077, topPct: 74.815, icon: "gemini"   },
       { label: "Answer",   type: "action",  leftPct: 87.692, topPct: 74.815, icon: "answer"   },
     ],
     // Orb travels: Docs→Split→Embed→Supabase, then cross to Retrieve, then bottom row
