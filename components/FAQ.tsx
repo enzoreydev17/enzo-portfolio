@@ -19,7 +19,7 @@ export default function FAQ() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-red/8 border border-brand-red/15 mb-5">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D40000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">// 07_faq</span>
+            <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">Still wondering if automation is worth it?</span>
           </div>
           <h2 className="font-display text-[36px] sm:text-[44px] font-semibold tracking-[-0.025em] leading-[1.15] text-ink">
             Got questions? I&apos;ve got <em className="not-italic text-brand-red">answers</em>.

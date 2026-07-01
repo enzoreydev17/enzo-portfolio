@@ -84,7 +84,7 @@ export default function Work() {
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-red/8 border border-brand-red/15 mb-5">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D40000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">// 03_case_studies</span>
+            <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">Delivered Projects</span>
           </div>
           <h2 className="font-display text-[36px] sm:text-[44px] font-semibold tracking-[-0.025em] leading-[1.15] text-ink">
             Real projects. Real results.

@@ -29,13 +29,13 @@ export default function Problem() {
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-red/8 border border-brand-red/15 mb-5">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D40000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-            <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">// 02_the_reality</span>
+            <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">The hidden cost of manual work</span>
           </div>
           <h2 className="font-display text-[36px] sm:text-[44px] font-semibold tracking-[-0.025em] leading-[1.15] text-ink">
-            Every business I&apos;ve worked with has the same invisible problem.
+            Your business is leaking hours every single day.
           </h2>
           <p className="font-mono text-[13px] text-muted mt-3 max-w-md mx-auto leading-relaxed">
-            Manual work is hiding in plain sight — and it&apos;s more expensive than anyone admits.
+            Not because your team isn&apos;t working hard — but because manual work quietly compounds over time.
           </p>
         </div>
 

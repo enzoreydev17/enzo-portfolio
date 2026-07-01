@@ -21,33 +21,28 @@ const DECK = [
 const CERTS = [
   {
     name: "AWS Solutions Architect Associate",
-    year: "2022",
+    cat: "Cloud",
     imgSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/3840px-Amazon_Web_Services_Logo.svg.png",
-    iconBg: "#fff",
   },
   {
     name: "Databricks Certified Data Engineer",
-    year: "2023",
+    cat: "Data Eng.",
     imgSrc: "https://upload.wikimedia.org/wikipedia/commons/6/63/Databricks_Logo.png",
-    iconBg: "#fff",
   },
   {
     name: "SnowPro Core Certified",
-    year: "2024",
+    cat: "Data Eng.",
     imgSrc: "https://img.logo.dev/snowflake.com?token=live_6a1a28fd-6420-4492-aeb0-b297461d9de2&size=512&retina=true&format=png",
-    iconBg: "#fff",
   },
   {
     name: "HubSpot RevOps Certified",
-    year: "—",
+    cat: "CRM",
     imgSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/HubSpot_Logo.svg/3840px-HubSpot_Logo.svg.png",
-    iconBg: "#fff",
   },
   {
     name: "Lean Six Sigma Black Belt",
-    year: "2020",
+    cat: "Process",
     imgSrc: "https://images.credly.com/images/99c6c563-b252-4a36-8521-00f4509f2e5c/image.png",
-    iconBg: "#fff",
   },
 ];
 
@@ -71,7 +66,7 @@ export default function About() {
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-red/8 border border-brand-red/15 mb-5">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D40000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
-            <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">// 04_about</span>
+            <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">Person Behind the Work</span>
           </div>
           <h2 className="font-display text-[36px] sm:text-[44px] font-semibold tracking-[-0.025em] leading-[1.15] text-ink">
             I didn&apos;t start as a consultant. I started as the builder.
@@ -85,6 +80,12 @@ export default function About() {
 
           {/* ── LEFT: Card deck carousel ── */}
           <div className="flex flex-col items-center gap-5">
+            {/* Intro label */}
+            <div className="text-center">
+              <p className="font-mono text-[11px] uppercase tracking-widest text-muted">Beyond the Screen</p>
+              <div className="mt-1.5 h-px w-12 mx-auto bg-brand-orange/40 rounded-full" />
+            </div>
+
             {/* Deck wrapper — extra bottom padding absorbs the stack offset */}
             <div className="relative" style={{ width: 280, height: 420 }}>
               {PHOTOS.map((photo, idx) => {
@@ -203,47 +204,61 @@ export default function About() {
             </div>
           </div>
 
-          {/* ── RIGHT: Bio + Certs + Education ── */}
-          <div>
-            <div className="space-y-5 mb-10">
-              <p className="font-display text-[17px] text-ink/85 leading-[1.8]">
-                My career started in data — a Statistics degree from University of the Philippines Los Baños,
-                then modeling credit risk at UnionBank and tracking commodity markets
-                at S&P Global Platts. I wasn&apos;t pitching decks. I was building
-                the actual systems that decisions ran on.
-              </p>
-              <p className="font-display text-[17px] text-ink/85 leading-[1.8]">
-                That shifted when I moved into automation. At Meta, I led the team
-                that delivered a UiPath bot saving 68,000 hours a year. At Accenture,
-                I built an AI agent that automated 65% of customer-facing operations.
-                At Thakral One, I designed a Single Customer View unifying four data
-                domains for a regional banking group.
-              </p>
-              <p className="font-display text-[17px] text-ink/85 leading-[1.8]">
-                What I found across all of it: the technical part is the easy bit.
-                The hard part is understanding the business well enough to know
-                what to build — and what not to.
-              </p>
-            </div>
+          {/* ── RIGHT: Bio ── */}
+          <div className="space-y-5">
+            <p className="font-display text-[17px] text-ink/85 leading-[1.8]">
+              My career started in data — a Statistics degree from University of the Philippines Los Baños,
+              then modeling credit risk at UnionBank and tracking commodity markets
+              at S&P Global Platts. I wasn&apos;t pitching decks. I was building
+              the actual systems that decisions ran on.
+            </p>
+            <p className="font-display text-[17px] text-ink/85 leading-[1.8]">
+              That shifted when I moved into automation. At Meta, I led the team
+              that delivered a UiPath bot saving 68,000 hours a year. At Accenture,
+              I built an AI agent that automated 65% of customer-facing operations.
+              At Thakral One, I designed a Single Customer View unifying four data
+              domains for a regional banking group.
+            </p>
+            <p className="font-display text-[17px] text-ink/85 leading-[1.8]">
+              What I found across all of it: the technical part is the easy bit.
+              The hard part is understanding the business well enough to know
+              what to build — and what not to.
+            </p>
+          </div>
 
-            {/* Certifications */}
-            <p className="font-mono text-[11px] uppercase tracking-widest text-muted mb-3">Certifications</p>
-            <div className="flex flex-col gap-2">
-              {CERTS.map(({ name, year, imgSrc, iconBg }) => (
-                <div key={name}
-                  className="flex items-center gap-3 px-3.5 py-2.5 bg-white rounded-xl border border-ink/8 transition-all hover:border-brand-orange/30 hover:bg-cream">
-                  <div className="w-12 h-9 rounded-lg flex-shrink-0 flex items-center justify-center overflow-hidden p-1.5"
-                    style={{ background: iconBg }}>
-                    <img src={imgSrc!} alt={name} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+        </div>
+
+        {/* ── Certifications marquee ── */}
+        <div className="mt-14">
+          <p className="font-mono text-[11px] uppercase tracking-widest text-muted mb-5 text-center">Certifications</p>
+          <div className="relative overflow-hidden">
+            {/* Fade edges */}
+            <div className="absolute left-0 top-0 h-full w-16 z-10 pointer-events-none"
+              style={{ background: "linear-gradient(to right, #FBEDDD, transparent)" }} />
+            <div className="absolute right-0 top-0 h-full w-16 z-10 pointer-events-none"
+              style={{ background: "linear-gradient(to left, #FBEDDD, transparent)" }} />
+
+            {/* Scrolling track — items duplicated for seamless loop */}
+            <div className="cert-track gap-4 py-2">
+              {[...CERTS, ...CERTS].map(({ name, cat, imgSrc }, i) => (
+                <div key={i}
+                  className="min-w-[160px] flex-shrink-0 flex flex-col items-center gap-3 px-5 py-4 bg-white border border-ink/8 rounded-2xl transition-all duration-300 hover:border-brand-orange/30 hover:shadow-xl cursor-default">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-xl overflow-hidden p-2"
+                    style={{ background: "#fff", boxShadow: "0 1px 8px rgba(58,31,14,0.09)" }}>
+                    <img src={imgSrc} alt={name}
+                      style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                      onError={(e) => { (e.target as HTMLImageElement).style.opacity = "0.2"; }} />
                   </div>
-                  <span className="font-mono text-[12px] text-ink flex-1 min-w-0">{name}</span>
-                  <span className="font-mono text-[11px] font-semibold text-ink/50 flex-shrink-0 ml-2">{year}</span>
+                  <div className="text-center">
+                    <p className="font-mono text-[11px] font-semibold text-ink leading-snug">{name}</p>
+                    <p className="font-mono text-[10px] text-muted mt-1">{cat}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
-
         </div>
+
       </div>
     </section>
   );

@@ -55,7 +55,7 @@ export default function HowItWorks() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-red/8 border border-brand-red/15 mb-5">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D40000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12h4l3 9 4-18 3 9h4"/></svg>
-            <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">// 05_how_it_works</span>
+            <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-red">How It Works</span>
           </div>
           <h2 className="font-display text-[36px] sm:text-[44px] font-semibold tracking-[-0.025em] leading-[1.15] text-ink">
             Five clear steps from chaos to clarity.

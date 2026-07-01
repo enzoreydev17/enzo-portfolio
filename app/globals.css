@@ -249,3 +249,15 @@ input[type=range]::-moz-range-thumb {
 
 /* Hide the availability badge inside the flow widget — Hero already has one */
 .hero-flow .availability-badge { display: none; }
+
+/* ── Cert marquee ────────────────────────────────────────────── */
+@keyframes cert-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.cert-track {
+  display: flex;
+  width: max-content;
+  animation: cert-scroll 32s linear infinite;
+}
+.cert-track:hover { animation-play-state: paused; }
