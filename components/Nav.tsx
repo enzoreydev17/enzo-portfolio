@@ -7,9 +7,9 @@ export default function Nav() {
       </a>
       <div className="flex items-center gap-1 font-mono text-[12px]">
         {[
+          ["#services",      "services"     ],
           ["#work",          "projects"     ],
           ["#about",         "about"        ],
-          ["#how-it-works",  "how it works" ],
           ["#calculator",    "save time"    ],
           ["#contact",       "contact"      ],
         ].map(([href, label]) => (
