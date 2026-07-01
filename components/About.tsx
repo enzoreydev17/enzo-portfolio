@@ -202,33 +202,31 @@ export default function About() {
           <div className="space-y-5">
             <p className="font-display text-[17px] text-ink/85 leading-[1.8]">
               I didn&apos;t start out chasing automation. I started with a Statistics degree from
-              University of the Philippines Los Baños, then years of quietly unglamorous work —
-              modeling credit risk at UnionBank of the Philippines, leveraging Natural Language
-              Processing (NLP) to understand customer feedback at S&P Global Platts. No one claps
-              for a well-built risk model. You just show up, get the numbers right, and let someone
-              else make the decision on top of it.
+              UP Los Baños, then years of unglamorous work — modeling credit risk at UnionBank,
+              using NLP to make sense of customer feedback at S&P Global Platts. No one claps for
+              a well-built risk model. You just show up, get the numbers right, and let someone
+              else decide what to do with them.
             </p>
             <p className="font-display text-[17px] text-ink/85 leading-[1.8]">
-              That discipline is what carried me into automation. At Meta, I led the team behind a
-              UiPath bot that saved 68,000 hours a year — not because I found a clever shortcut,
-              but because I was willing to map every tedious step nobody else wanted to look at. At
-              Accenture, I built an AI agent that took over 65% of customer-facing operations. At
-              Thakral One, I unified four fractured data domains into one Single Customer View for a
-              regional bank and created a segmentation model to build multiple personas that helped
-              their team personalize their campaigns.
+              That discipline carried me into automation. At Meta, I led the team behind a UiPath
+              bot saving 68,000 hours a year — not from a clever shortcut, but from mapping every
+              tedious step nobody else wanted to look at. At Accenture, I built an AI agent that
+              took over 65% of customer-facing operations. At Thakral One, I unified four fractured
+              data domains into one Single Customer View and built the segmentation model behind it,
+              so the team could finally personalize campaigns by persona instead of guesswork.
             </p>
             <p className="font-display text-[17px] text-ink/85 leading-[1.8]">
-              What surprised me, every single time, is that the technical build was never the risk.
-              The risk was moving too fast to actually understand the business — and building
-              something technically impressive that solved the wrong problem.
+              What surprised me every time: the build was never the hard part. The risk was moving
+              too fast to understand the business, and shipping something impressive that solved the
+              wrong problem.
             </p>
             <p className="font-display text-[17px] text-ink/85 leading-[1.8]">
-              I carry the same discipline into endurance sports. Triathlon doesn&apos;t reward talent
-              on race day — it rewards the hundreds of unglamorous training sessions nobody sees,
-              the ones where quitting would&apos;ve been easy and no one would&apos;ve known. That&apos;s
-              the standard I hold my client work to. Not &ldquo;did it launch,&rdquo; but &ldquo;did I actually
-              understand your business well enough to build the right thing, and did it bring real
-              impact — not just a working demo.&rdquo;
+              I carry the same discipline into triathlon. Race day doesn&apos;t reward talent — it
+              rewards the hundreds of unglamorous training sessions nobody sees, where quitting
+              would&apos;ve been easy and no one would&apos;ve known. That&apos;s the standard I hold
+              my work to. Not &ldquo;did it launch,&rdquo; but &ldquo;did I understand your business well
+              enough to build the right thing — and did it bring real impact, not just a working
+              demo.&rdquo;
             </p>
           </div>
 
