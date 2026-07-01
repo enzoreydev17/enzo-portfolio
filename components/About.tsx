@@ -201,30 +201,34 @@ export default function About() {
           {/* ── RIGHT: Bio ── */}
           <div className="space-y-5">
             <p className="font-display text-[17px] text-ink/85 leading-[1.8]">
-              My career started in data — a Statistics degree from University of the Philippines Los Baños,
-              then modeling credit risk at UnionBank and tracking commodity markets
-              at S&P Global Platts. I wasn&apos;t pitching decks. I was building
-              the actual systems that decisions ran on.
+              I didn&apos;t start out chasing automation. I started with a Statistics degree from
+              University of the Philippines Los Baños, then years of quietly unglamorous work —
+              modeling credit risk at UnionBank of the Philippines, leveraging Natural Language
+              Processing (NLP) to understand customer feedback at S&P Global Platts. No one claps
+              for a well-built risk model. You just show up, get the numbers right, and let someone
+              else make the decision on top of it.
             </p>
             <p className="font-display text-[17px] text-ink/85 leading-[1.8]">
-              That shifted when I moved into automation. At Meta, I led the team
-              that delivered a UiPath bot saving 68,000 hours a year. At Accenture,
-              I built an AI agent that automated 65% of customer-facing operations.
-              At Thakral One, I designed a Single Customer View unifying four data
-              domains for a regional banking group.
+              That discipline is what carried me into automation. At Meta, I led the team behind a
+              UiPath bot that saved 68,000 hours a year — not because I found a clever shortcut,
+              but because I was willing to map every tedious step nobody else wanted to look at. At
+              Accenture, I built an AI agent that took over 65% of customer-facing operations. At
+              Thakral One, I unified four fractured data domains into one Single Customer View for a
+              regional bank and created a segmentation model to build multiple personas that helped
+              their team personalize their campaigns.
             </p>
             <p className="font-display text-[17px] text-ink/85 leading-[1.8]">
-              What I found across all of it: the technical part is the easy bit.
-              The hard part is understanding the business well enough to know
-              what to build — and what not to.
+              What surprised me, every single time, is that the technical build was never the risk.
+              The risk was moving too fast to actually understand the business — and building
+              something technically impressive that solved the wrong problem.
             </p>
             <p className="font-display text-[17px] text-ink/85 leading-[1.8]">
-              The same mindset carries over outside of work.
-            </p>
-            <p className="font-display text-[17px] text-ink/85 leading-[1.8]">
-              Endurance sports taught me that meaningful results don&apos;t come from one big effort —
-              they come from showing up consistently. That&apos;s exactly how I approach automation
-              projects: understand the problem, build deliberately, and improve relentlessly.
+              I carry the same discipline into endurance sports. Triathlon doesn&apos;t reward talent
+              on race day — it rewards the hundreds of unglamorous training sessions nobody sees,
+              the ones where quitting would&apos;ve been easy and no one would&apos;ve known. That&apos;s
+              the standard I hold my client work to. Not &ldquo;did it launch,&rdquo; but &ldquo;did I actually
+              understand your business well enough to build the right thing, and did it bring real
+              impact — not just a working demo.&rdquo;
             </p>
           </div>
 
