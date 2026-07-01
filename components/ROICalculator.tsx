@@ -21,17 +21,30 @@ function fmtHours(h: number) {
   return `${h.toFixed(1)}h`;
 }
 
-export default function ROICalculator() {
-  const [people, setPeople]   = useState(5);
-  const [hours, setHours]     = useState(10);
-  const [auto, setAuto]       = useState(75);
+function fmtMoney(n: number) {
+  if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
+  if (n >= 1_000)     return `$${Math.round(n / 1_000)}k`;
+  return `$${Math.round(n)}`;
+}
 
-  const weeklyPerPerson = hours * auto / 100;
-  const weeklyTeam      = Math.round(weeklyPerPerson * people);
-  const monthly         = Math.round(weeklyTeam * 52 / 12);
-  const annual          = weeklyTeam * 52;
-  const daysFreed       = Math.round(annual / 8);
-  const fteRecovered    = (annual / 2080).toFixed(1);
+export default function ROICalculator() {
+  const [people, setPeople] = useState(5);
+  const [hours,  setHours]  = useState(10);
+  const [auto,   setAuto]   = useState(75);
+  const [rate,   setRate]   = useState(40);
+
+  const weeklyPerPerson  = hours * auto / 100;
+  const weeklyTeam       = Math.round(weeklyPerPerson * people);
+  const monthly          = Math.round(weeklyTeam * 52 / 12);
+  const annual           = weeklyTeam * 52;
+  const daysFreed        = Math.round(annual / 8);
+  const fteRecovered     = (annual / 2080).toFixed(1);
+
+  // Money outputs
+  const monthlySpend     = Math.round(people * hours * (52 / 12) * rate);
+  const annualSpend      = people * hours * 52 * rate;
+  const annualSavings    = Math.round(annual * rate);
+  const monthlySavings   = Math.round(monthly * rate);
 
   const onPreset = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
     setAuto(Number(e.target.selectedOptions[0].dataset.auto));
@@ -47,13 +60,19 @@ export default function ROICalculator() {
     {
       id: "hours", label: "Manual hours per person / week", value: hours,
       min: 1, max: 40, step: 1,
-      display: `${hours}h`,
+      display: `${hours}h / week`,
       set: setHours,
+    },
+    {
+      id: "rate", label: "Fully-loaded cost per person / hour", value: rate,
+      min: 15, max: 150, step: 5,
+      display: `$${rate} / hr`,
+      set: setRate,
     },
     {
       id: "auto", label: "How automatable is this task?", value: auto,
       min: 30, max: 95, step: 5,
-      display: `${auto}%`,
+      display: `${auto}% automatable`,
       set: setAuto,
     },
   ];
@@ -75,6 +94,7 @@ export default function ROICalculator() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 items-start">
+
           {/* Inputs */}
           <div className="bg-cream rounded-2xl p-6 sm:p-8 border border-ink/8 space-y-8">
             {sliders.map(({ id, label, value, min, max, step, display, set }) => (
@@ -105,47 +125,72 @@ export default function ROICalculator() {
 
           {/* Outputs */}
           <div className="flex flex-col gap-4">
-            {/* Hero stat */}
-            <div className="rounded-2xl p-6 text-cream flex items-center gap-5"
+
+            {/* Hero stat — annual savings + current spend */}
+            <div className="rounded-2xl overflow-hidden"
               style={{ background: "linear-gradient(135deg, #D40000 0%, #F58231 100%)" }}>
-              <div className="w-14 h-14 rounded-2xl flex-shrink-0 flex items-center justify-center"
-                style={{ background: "rgba(251,237,221,0.18)" }}>
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
+              {/* Savings row */}
+              <div className="flex items-center gap-5 px-6 pt-6 pb-5">
+                <div className="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center"
+                  style={{ background: "rgba(251,237,221,0.18)" }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <div className="text-cream">
+                  <div className="font-display text-[38px] font-semibold leading-none">{fmtMoney(annualSavings)}</div>
+                  <div className="font-mono text-[10px] uppercase tracking-widest opacity-70 mt-1">Estimated annual savings</div>
+                </div>
               </div>
-              <div>
-                <div className="font-display text-[40px] font-semibold leading-none">{fmtHours(weeklyTeam)}</div>
-                <div className="font-mono text-[10px] uppercase tracking-widest opacity-70 mt-1">Team hours saved / week</div>
+              {/* Divider */}
+              <div style={{ borderTop: "1px solid rgba(251,237,221,0.2)" }} />
+              {/* Current spend row */}
+              <div className="px-6 py-4">
+                <p className="font-mono text-[9px] font-bold uppercase tracking-widest mb-3" style={{ color: "rgba(251,237,221,0.6)" }}>
+                  What you&apos;re currently spending on this task
+                </p>
+                <div className="flex gap-4">
+                  <div className="flex-1">
+                    <div className="font-display text-[22px] font-semibold text-cream">{fmtMoney(monthlySpend)}</div>
+                    <div className="font-mono text-[10px] uppercase tracking-wider mt-0.5" style={{ color: "rgba(251,237,221,0.55)" }}>per month</div>
+                  </div>
+                  <div style={{ width: 1, background: "rgba(251,237,221,0.2)" }} />
+                  <div className="flex-1">
+                    <div className="font-display text-[22px] font-semibold text-cream">{fmtMoney(annualSpend)}</div>
+                    <div className="font-mono text-[10px] uppercase tracking-wider mt-0.5" style={{ color: "rgba(251,237,221,0.55)" }}>per year</div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Breakdown */}
-            <div className="bg-cream rounded-2xl p-6 border border-ink/8">
-              <p className="font-mono text-[11px] uppercase tracking-widest text-muted mb-4">Time recovered</p>
+            {/* Time + FTE breakdown */}
+            <div className="bg-cream rounded-2xl p-4 border border-ink/8">
+              <p className="font-mono text-[10px] uppercase tracking-widest text-muted mb-2">Time & money recovered</p>
               <dl className="space-y-0">
                 {[
-                  { label: "Per month",       value: `${monthly}h`,         big: false },
-                  { label: "Per year",        value: `${annual}h`,          big: false },
-                  { label: "Work days freed", value: `${daysFreed} days`,   big: false },
-                  { label: "FTE recovered",   value: `${fteRecovered} FTE`, big: true  },
+                  { label: "Hours saved / week",  value: fmtHours(weeklyTeam),        big: false },
+                  { label: "Hours saved / month", value: `${monthly}h`,               big: false },
+                  { label: "Saved / month",       value: fmtMoney(monthlySavings),    big: false },
+                  { label: "Work days freed",     value: `${daysFreed} days`,         big: false },
+                  { label: "FTE recovered",       value: `${fteRecovered} FTE`,       big: true  },
                 ].map(({ label, value, big }) => (
-                  <div key={label} className={`flex justify-between items-center py-3.5 ${big ? "border-t border-ink/10" : "border-b border-ink/8"}`}>
-                    <dt className={`font-mono text-[13px] ${big ? "font-semibold text-ink" : "text-muted"}`}>{label}</dt>
-                    <dd className={`font-display ${big ? "text-[26px] font-semibold text-gold" : "text-[15px] font-medium text-ink"}`}>{value}</dd>
+                  <div key={label} className={`flex justify-between items-center py-2 ${big ? "border-t border-ink/10" : "border-b border-ink/8"}`}>
+                    <dt className={`font-mono text-[11px] ${big ? "font-semibold text-ink" : "text-muted"}`}>{label}</dt>
+                    <dd className={`font-display ${big ? "text-[20px] font-semibold text-gold" : "text-[13px] font-medium text-ink"}`}>{value}</dd>
                   </div>
                 ))}
               </dl>
             </div>
+
           </div>
         </div>
 
-        {/* CTA — full width below both columns */}
+        {/* CTA */}
         <div className="mt-5">
           <a href="#contact"
             className="w-full block text-center py-4 rounded-xl bg-ink text-cream font-mono text-[13px] font-semibold transition-all hover:-translate-y-0.5 hover:bg-brand-red hover:shadow-[0_6px_20px_rgba(212,0,0,0.25)]">
-            Start getting that time back →
+            Start getting that money back →
           </a>
           <p className="font-mono text-[11px] text-muted/70 text-center leading-relaxed mt-3">
-            Illustrative estimates. FTE calculated at 2,080 hrs/year. Actual results vary by task complexity.
+            Illustrative estimates. Fully-loaded cost includes salary, benefits & overhead. FTE at 2,080 hrs/yr.
           </p>
         </div>
       </div>
