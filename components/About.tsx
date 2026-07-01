@@ -2,20 +2,14 @@
 import { useState, useEffect, useCallback } from "react";
 
 const PHOTOS = [
-  { src: "/photos/photo-profile.jpg",   caption: "Lorenzo Zuriel Reybuenan",  sub: "Automation Engineer & AI Consultant", pos: "top" },
-  { src: "/photos/photo-ironman.jpg",   caption: "IRONMAN 70.3 Philippines",   sub: "Finisher · 113km · Swim · Bike · Run", pos: "top" },
-  { src: "/photos/photo-swimming.jpg",  caption: "CoastMan Lobo 2026",         sub: "1.5km Open Water Swim Finisher", pos: "center" },
-  { src: "/photos/photo-running.jpg",   caption: "Albay Ultra",                sub: "Trail & Ultra Running", pos: "center" },
-  { src: "/photos/photo-cycling.jpg",   caption: "Road Cycling",               sub: "Triathlon Training", pos: "center" },
+  { src: "/photos/photo-profile.jpg",  caption: "Lorenzo Zuriel Reybuenan", sub: "Automation Engineer & AI Consultant", pos: "top" },
+  { src: "/photos/photo-ironman.jpg",  caption: "IRONMAN 70.3 Philippines",  sub: "Finisher · 113km · Swim · Bike · Run", pos: "top" },
 ];
 
-// deck positions: slot 0 = front, slot 4 = furthest behind
+// deck positions: slot 0 = front, slot 1 = behind
 const DECK = [
-  { tx:  0,  ty:  0,  rot:  0,   sc: 1.00, z: 5, op: 1.0 },
-  { tx: 10,  ty:  8,  rot:  3.5, sc: 0.96, z: 4, op: 1.0 },
-  { tx: -13, ty: 14,  rot: -4.5, sc: 0.92, z: 3, op: 0.9 },
-  { tx: 15,  ty: 20,  rot:  6.0, sc: 0.88, z: 2, op: 0.65 },
-  { tx: -8,  ty: 26,  rot: -2.5, sc: 0.84, z: 1, op: 0.45 },
+  { tx:  0,  ty:  0,  rot:  0,   sc: 1.00, z: 2, op: 1.0  },
+  { tx: 14,  ty: 10,  rot:  4.5, sc: 0.95, z: 1, op: 0.85 },
 ];
 
 const CERTS = [
@@ -223,6 +217,14 @@ export default function About() {
               What I found across all of it: the technical part is the easy bit.
               The hard part is understanding the business well enough to know
               what to build — and what not to.
+            </p>
+            <p className="font-display text-[17px] text-ink/85 leading-[1.8]">
+              The same mindset carries over outside of work.
+            </p>
+            <p className="font-display text-[17px] text-ink/85 leading-[1.8]">
+              Endurance sports taught me that meaningful results don&apos;t come from one big effort —
+              they come from showing up consistently. That&apos;s exactly how I approach automation
+              projects: understand the problem, build deliberately, and improve relentlessly.
             </p>
           </div>
 

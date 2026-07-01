@@ -26,9 +26,8 @@ export default function Hero() {
           </h1>
 
           <p className="font-mono text-[14px] sm:text-[15px] text-muted leading-relaxed mt-7 max-w-lg">
-            I&apos;m Lorenzo — a Data Scientist and automation engineer who builds the
-            pipelines, bots, and AI agents that eliminate busywork. Systems that run
-            themselves, so your team can focus on work that actually matters.
+            I build AI systems that eliminate repetitive work, connect scattered data,
+            and give teams back hundreds of hours every month.
           </p>
 
           <div className="flex flex-wrap gap-4 mt-9">

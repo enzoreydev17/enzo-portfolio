@@ -149,6 +149,14 @@ export default function Contact() {
 
             {tab === "message" ? (
               <form onSubmit={handleSubmit} className="p-6 sm:p-8 flex flex-col gap-4">
+                <div className="pb-1 border-b border-ink/8">
+                  <p className="font-display text-[17px] font-medium text-ink leading-snug">
+                    Tell me the process that&apos;s wasting the most time.
+                  </p>
+                  <p className="font-mono text-[12px] text-muted mt-1">
+                    I&apos;ll tell you whether it&apos;s worth automating — no obligation.
+                  </p>
+                </div>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[{ id: "name", label: "Your Name", type: "text", placeholder: "Lorenzo Reybuenan" },
                     { id: "email", label: "Email Address", type: "email", placeholder: "email@example.com" }].map(({ id, label, type, placeholder }) => (
