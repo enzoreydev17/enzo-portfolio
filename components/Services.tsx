@@ -1,3 +1,5 @@
+"use client";
+
 const SERVICES = [
   {
     title: "Workflow Automation & RPA",
