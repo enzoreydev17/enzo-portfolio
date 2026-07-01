@@ -187,7 +187,7 @@ export default function Contact() {
               </form>
             ) : (
               <iframe
-                src="https://calendly.com/enzolabsai?hide_gdpr_banner=1&primary_color=d40000"
+                src="https://calendly.com/enzolabsai/30min?hide_gdpr_banner=1&primary_color=d40000"
                 title="Book a call with Lorenzo"
                 style={{ width: "100%", height: "660px", border: 0 }}
                 loading="lazy"

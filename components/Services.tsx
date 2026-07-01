@@ -13,7 +13,10 @@ const SERVICES = [
         <path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/>
       </svg>
     ),
-    example: null,
+    example: {
+      label: "Project",
+      text: "Built a UiPath bot integrated with Meta's internal systems. Eliminated 68,000 hours of manual work per year — the equivalent of 32 full-time employees freed up.",
+    },
   },
   {
     title: "AI Agents & LLM Systems",
@@ -27,7 +30,10 @@ const SERVICES = [
         <path d="M8 10h.01M12 10h.01M16 10h.01"/>
       </svg>
     ),
-    example: null,
+    example: {
+      label: "Project",
+      text: "Deployed an n8n agentic workflow that autonomously classified and resolved customer operations — automating 65% of the ops floor. Paired with a RAG chatbot that booked sales meetings directly from Facebook leads.",
+    },
   },
   {
     title: "Data Pipeline & Analytics Engineering",
@@ -42,7 +48,10 @@ const SERVICES = [
         <path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/>
       </svg>
     ),
-    example: null,
+    example: {
+      label: "Project",
+      text: "Designed a Single Customer View unifying Cards, Deposits, Customer, and Digital data domains for a regional banking group — with automated quality checks via Soda ensuring every dataset was campaign-ready.",
+    },
   },
   {
     title: "System Integration & Migration",
@@ -57,7 +66,7 @@ const SERVICES = [
       </svg>
     ),
     example: {
-      label: "Sample project",
+      label: "Project",
       text: "Facebook Lead Ads → GoHighLevel CRM → automated follow-up sequences. Removed 3 manual handoffs; lead response time dropped from 4 hours to under 4 minutes.",
     },
   },
